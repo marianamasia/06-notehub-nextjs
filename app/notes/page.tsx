@@ -5,10 +5,8 @@ import {
 } from "@tanstack/react-query";
 import { fetchNotes } from "@/lib/api";
 import NotesClient from "./Notes.client";
-import { connection } from "next/server";
 
 export default async function Notes() {
-  await connection();
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
